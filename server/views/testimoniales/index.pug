@@ -1,0 +1,52 @@
+extends ../layout/index
+block contenido 
+    main.container.mt-5
+        h1.text-center.mb-5 #{pagina}
+
+        .row
+            .col-md-12
+                include ../layout/partials/testimoniales.pug
+
+
+            .col-md-12
+                h2.text-center Agrega un Testimonio
+                if(errores)
+                    each error in errores
+                        .alert.alert-danger.text-center=error.mensaje
+
+                .row.justify-content-center
+                    .col-md-8
+                        form(action="/testimoniales", method="POST")
+                            .form-group
+                                label(for="nombre") Nombre
+                                input(  
+                                    type="text", 
+                                    placeholder="Tu nombre", 
+                                    name="nombre", 
+                                    id="nombre",
+                                    class="form-control",
+                                    value=nombre
+                                )
+                            .form-group
+                                label(for="correo") Correo Electronico
+                                input(  
+                                    type="email", 
+                                    placeholder="Tu Correo Electronico", 
+                                    name="correo", 
+                                    id="correo",
+                                    class="form-control",
+                                    value=correo
+                                )
+                            .form-group
+                                label(for="mensaje") Mensaje
+                                textarea(  
+                                    placeholder="Dejanos un mensaje", 
+                                    name="mensaje", 
+                                    id="mensaje",
+                                    row="3",
+                                    class="form-control",
+                                )=mensaje
+                            input(type="submit", class="btn btn-success btn-block")
+
+
+

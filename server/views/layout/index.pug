@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{titulo} | #{pagina}
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+        link(href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Open+Sans:ital,wght@0,400;1,700&family=Staatliches&display=swap', rel='stylesheet')
+        script(src='https://kit.fontawesome.com/18d5a4ddc8.js', crossorigin='anonymous')
+        link(rel="stylesheet", href="/css/style.css")
+    body(class=clase)
+        include includes/header
+        block slider
+        block contenido
+        include includes/footer
